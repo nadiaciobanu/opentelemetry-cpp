@@ -69,6 +69,17 @@ cc_test(
     ],
 )
 
+cc_test(
+ name = "otlp_exporter_test_local",
+    srcs = ["test/otlp_exporter_test_local.cc"],
+    deps = [
+        ":otlp_exporter",
+        "//api",
+        "//sdk/src/common:random",
+        "@com_google_googletest//:gtest_main",
+    ],
+)
+
 otel_cc_benchmark(
     name = "otlp_exporter_benchmark",
     srcs = ["test/otlp_exporter_benchmark.cc"],
